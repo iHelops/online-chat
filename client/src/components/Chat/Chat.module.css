@@ -1,0 +1,44 @@
+.chat {
+    padding: 0 40px;
+    animation: fadeIn .5s forwards;
+    max-width: 700px;
+    width: 100%;
+}
+
+.chat > div {
+    border: 1px solid rgba(0,0,0,.06);
+    margin-bottom: 15px;
+    padding: 30px;
+}
+
+.messages {
+    height: 500px;
+    overflow-y: scroll;
+}
+
+.message {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.my-message {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.text-message {
+    width: 50%;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
