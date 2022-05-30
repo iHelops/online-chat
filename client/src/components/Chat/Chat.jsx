@@ -1,4 +1,4 @@
-import { Button, Typography, Avatar, Row, Col, Input, message } from "antd";
+import { Button, Typography, Avatar, Row, Col, Input, message, Tooltip } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import React, { useEffect, useState } from "react";
 import style from "./Chat.module.css";
@@ -43,6 +43,7 @@ const Chat = (props) => {
             switch (message.action) {
                 case 'new_connection':
                 case 'new_message':
+                    console.log(message)
                     setMessages((prev) => [...prev, message]);
                     break;
                 case 'get_prev_messages':
@@ -86,12 +87,21 @@ const Chat = (props) => {
                                     <Avatar size={48} icon={<UserOutlined />} />
                                 </div>
                                 <div className={style["text-message"]}>
-                                    <Title level={5}>{message.username}</Title>
+                                    <div className={style['messege-title']}>
+                                        <Title level={5}>{message.username}</Title>
+                                        <Tooltip title={message.when}>
+                                            <Text type="secondary">{message.time}</Text>
+                                        </Tooltip>
+                                    </div>
                                     <Text>{message.message}</Text>
                                 </div>
                             </div>
                         } else if (message.action === 'new_connection') {
-                            return <div key={index} style={{marginBottom: 8}}><Text type="secondary">{message.username} entered the chat!</Text></div>
+                            return <div key={index} style={{marginBottom: 8}}>
+                                <Tooltip title={message.when}>
+                                    <Text type="secondary">{message.username} entered the chat at {message.time}</Text>
+                                </Tooltip>
+                            </div>
                         }
                     })
                 )}

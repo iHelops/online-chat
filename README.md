@@ -1,5 +1,5 @@
 # Online chat
-[![Preview](https://i.ibb.co/7v4t0Hn/2022-05-30-092224.png "Preview")](https://i.ibb.co/7v4t0Hn/2022-05-30-092224.png "Preview")
+[![Preview](https://i.ibb.co/Z8726wY/2022-05-30-110326.png "Preview")](https://i.ibb.co/Z8726wY/2022-05-30-110326.png "Preview")
 
 ## This application uses
 - [`React`](https://ru.reactjs.org/ "`React`")

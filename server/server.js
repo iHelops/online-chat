@@ -8,7 +8,10 @@ const wsServer = new ws.Server({
 
 wsServer.on('connection', (wsClient) => {
     wsClient.on('message', message => {
-        message = JSON.parse(message)
+        let date = new Date();
+        when = `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`
+        time = `${date.getHours()}:${date.getMinutes()}`
+        message = {...JSON.parse(message), when: when, time: time}
 
         switch (message.action) {
             case 'new_connection':
